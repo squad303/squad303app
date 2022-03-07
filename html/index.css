@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: courier, courier new, serif;
+    font-size: 9pt;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.top-logo {
+    margin: 10px 0;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.located-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+    font-size: 12pt;
+    overflow-wrap: anywhere;
+}
+
+.bordered_wrapper {
+    font-size: 12pt; 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 15px 10px;
+    font-weight: bold;
+}
+
+.clear-link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.button {
+    border: none;
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    font-family: courier, courier new, serif;
+    font-size: 12pt;
+    text-align: center;
+    margin: 0 10px;
+}
+
+img {
+    height: 40px;
+}
+
+.logos {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.reload-button {
+    max-height: 40px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.reload-button__small {
+    max-height: 18px;
+}
+
+.proclamation {
+    margin: 15px 0;
+}
+
+.button-icon-text {
+    padding-right: 10px;
+    white-space: nowrap;
+}
