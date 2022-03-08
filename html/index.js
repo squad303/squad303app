@@ -30,6 +30,7 @@ async function draw() {
     const response = await fetch('https://example.in/api'); //provide yours api endpoint, 1920.in won't work due to cors
     phoneNum = await response.json();
     setMessage();
+    sendMessage();
 }
 
 function setMessage()
@@ -41,6 +42,25 @@ function setMessage()
     phoneNumberField.href = smshref;
     const sendButton = document.getElementById("buttonSend");
     sendButton.href = smshref;
+}
+
+
+// send one message per day using textbelt free trial, imo it might work with different number and different senders
+function sendMessage()
+{
+    fetch('https://textbelt.com/text', {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+        phone: document.getElementById("phoneNumber"),
+        message: encodeURI(currentMsg),
+        key: 'textbelt',
+    }),
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        console.log(data);
+    });
 }
 
 function getDefaultIndex() {
