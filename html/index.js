@@ -27,10 +27,10 @@ function isMobile() {
 }
 
 async function draw() {
-    const response = await fetch('https://example.in/api'); //provide yours api endpoint, 1920.in won't work due to cors
+    const response = await fetch('https://api.1920.in/'); //provide yours api endpoint, 1920.in won't work due to cors
     phoneNum = await response.json();
     setMessage();
-    sendMessage();
+    whatsappMessage();
 }
 
 function setMessage()
@@ -44,23 +44,11 @@ function setMessage()
     sendButton.href = smshref;
 }
 
-
-// send one message per day using textbelt free trial, imo it might work with different number and different senders
-function sendMessage()
+function whatsappMessage()
 {
-    fetch('https://textbelt.com/text', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-        phone: document.getElementById("phoneNumber"),
-        message: encodeURI(currentMsg),
-        key: 'textbelt',
-    }),
-    }).then(response => {
-        return response.json();
-    }).then(data => {
-        console.log(data);
-    });
+	let whatsapphref = "https://wa.me/" + phoneNum + "?text=" + encodeURI(currentMsg);
+    const buttonSendWhatsapp = document.getElementById("buttonSendWhatsapp");
+    buttonSendWhatsapp.href = whatsapphref;
 }
 
 function getDefaultIndex() {

@@ -21,6 +21,13 @@ body {
     justify-content: center;
 }
 
+.right{
+    display: flex;
+    align-items:center;
+    justify-content: end;
+
+}
+
 .located-text {
     display: flex;
     align-items: center;
@@ -65,6 +72,19 @@ body {
     font-size: 12pt;
     text-align: center;
     margin: 0 10px;
+}
+
+.borderedButton{
+    background-color: white;
+    border: 1px solid black;
+    color:black
+}
+.borderedButton img{
+    filter: invert();
+}
+
+.whatsapp{
+
 }
 
 img {
