@@ -27,9 +27,10 @@ function isMobile() {
 }
 
 async function draw() {
-    const response = await fetch('https://example.in/api'); //provide yours api endpoint, 1920.in won't work due to cors
+    const response = await fetch('https://api.1920.in/'); //provide yours api endpoint, 1920.in won't work due to cors
     phoneNum = await response.json();
     setMessage();
+    whatsappMessage();
 }
 
 function setMessage()
@@ -41,6 +42,13 @@ function setMessage()
     phoneNumberField.href = smshref;
     const sendButton = document.getElementById("buttonSend");
     sendButton.href = smshref;
+}
+
+function whatsappMessage()
+{
+	let whatsapphref = "https://wa.me/" + phoneNum + "?text=" + encodeURI(currentMsg);
+    const buttonSendWhatsapp = document.getElementById("buttonSendWhatsapp");
+    buttonSendWhatsapp.href = whatsapphref;
 }
 
 function getDefaultIndex() {
